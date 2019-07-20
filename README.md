@@ -8,7 +8,7 @@ Build a react native app that:
 
 - The list of launches should show in a list as per the attached design, so instead of dominos or starbucks, it'll be the name of the capsule and instead of the price it'll be the date of launch
 
-- In the element that says "Current Balance" replace it with "Total Launches" and display the total number of launches instead of "$8,356.34"
+- In the element that says "Current Balance" replace it with "Total Launches" and display the total number of launches instead of "$234,ooo"
 
 - Instead of "Good Evening, Philip", put in your name
 
