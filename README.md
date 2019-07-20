@@ -1,8 +1,8 @@
 # ios-ch
 
-# react-native-test
 
-Build a react native app that:
+Build An iOS app in swift 
+that:
 
 - Pulls data of all [launches](https://docs.spacexdata.com/?version=latest#5fc4c846-c373-43df-a10a-e9faf80a8b0a) - filter out all launches before 2014
 
