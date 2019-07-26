@@ -105,6 +105,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="greetingLabel" destination="a6c-xs-3yo" id="WxY-bk-lrw"/>
                         <outlet property="tableView" destination="lAe-v5-g14" id="DAK-Uo-DWe"/>
                         <outlet property="totalLaunchesLabel" destination="BI8-tW-dNI" id="1pz-U0-mkz"/>
                         <outlet property="totalView" destination="MUf-Uj-ZCb" id="M1D-TZ-jDw"/>

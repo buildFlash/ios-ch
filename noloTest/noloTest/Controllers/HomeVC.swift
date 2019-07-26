@@ -10,6 +10,7 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    @IBOutlet weak var greetingLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalView: UIView!
     @IBOutlet weak var totalLaunchesLabel: UILabel!
@@ -26,13 +27,16 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         fetchData()
-        setupTableView()
-        setupTotalView()
+        setupViews()
     }
     
-    private func setupTotalView() {
+    private func setupViews() {
         totalView.layer.cornerRadius = totalView.frame.height/2
         totalView.dropShadow()
+        
+        greetingLabel.text = getGreeting() + ", Aryan"
+        
+        setupTableView()
     }
 
     private func fetchData() {
@@ -58,6 +62,23 @@ class HomeVC: UIViewController {
         tableView.tableFooterView = UIView()
         let nib = UINib(nibName: "LaunchCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: cellID)
+    }
+    
+    private func getGreeting() -> String {
+        var greeting = "Good Morning"
+        let date = Date()
+        let calendar = NSCalendar.current
+        let currentHour = calendar.component(.hour, from: date)
+        guard let hourInt = Int(currentHour.description) else { return greeting }
+        
+        if hourInt >= 12 && hourInt <= 18 {
+            greeting = "Good Afternoon"
+        } else if hourInt >= 0 && hourInt <= 12 {
+            greeting = "Good Morning"
+        } else if hourInt >= 18 && hourInt <= 24 {
+            greeting = "Good Evening"
+        }
+        return greeting
     }
 
 }
