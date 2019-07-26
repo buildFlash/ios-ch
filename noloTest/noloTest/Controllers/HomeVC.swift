@@ -110,10 +110,19 @@ extension HomeVC: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let returnedView = UIView(frame: CGRect(x: 40, y: 10, width: UIScreen.main.bounds.width, height: 30)) 
-        returnedView.backgroundColor = UIColor(red: 246.0/255.0, green: 244.0/255.0, blue: 241.0/255.0, alpha: 1.0)
+        let returnedView = UIView(frame: CGRect(x: 40,
+                                                y: 10,
+                                                width: UIScreen.main.bounds.width,
+                                                height: 30))
+        returnedView.backgroundColor = UIColor(red: 246.0/255.0,
+                                               green: 244.0/255.0,
+                                               blue: 241.0/255.0,
+                                               alpha: 1.0)
         
-        let label = UILabel(frame: CGRect(x: 40, y: 0, width: UIScreen.main.bounds.width, height: 30))
+        let label = UILabel(frame: CGRect(x: 40,
+                                          y: 0,
+                                          width: UIScreen.main.bounds.width,
+                                          height: 30))
         label.font = UIFont(name: "AvenirNext-Bold", size: 13)
         label.textColor = .darkGray
         label.text = sortedSections[section]
@@ -135,8 +144,9 @@ extension HomeVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? LaunchCell {
-            cell.initWith(launch: sections[sortedSections[indexPath.section]]![indexPath.row])
+        if let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? LaunchCell,
+            let launch = sections[sortedSections[indexPath.section]]?[indexPath.row] {
+            cell.initWith(launch: launch)
             return cell
         }
         return UITableViewCell()
