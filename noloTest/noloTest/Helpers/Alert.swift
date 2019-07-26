@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SCLAlertView
 
 class Alert {
     
@@ -25,6 +26,12 @@ class Alert {
             
         }
         
+    }
+    
+    static func showOKSCAlert(message: String, title: String) {
+        let alertView = SCLAlertView()
+        
+        alertView.showSuccess(title, subTitle: message)
     }
     
     static func showOKAlert(message: String, title: String, vc: UIViewController) {

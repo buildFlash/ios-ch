@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E7408A5522EB7B1A003C1290 /* LaunchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7408A5422EB7B1A003C1290 /* LaunchCell.swift */; };
+		E7408A5722EB8A85003C1290 /* UIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7408A5622EB8A85003C1290 /* UIView+Additions.swift */; };
+		E7408A5922EB8B97003C1290 /* TriangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7408A5822EB8B97003C1290 /* TriangleView.swift */; };
 		E7EB5F4022EB655B00571557 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EB5F3F22EB655B00571557 /* AppDelegate.swift */; };
 		E7EB5F4222EB655B00571557 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EB5F4122EB655B00571557 /* HomeVC.swift */; };
 		E7EB5F4522EB655B00571557 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7EB5F4322EB655B00571557 /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 		0004FE569394F14598B08E37 /* Pods-noloTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-noloTest.release.xcconfig"; path = "Target Support Files/Pods-noloTest/Pods-noloTest.release.xcconfig"; sourceTree = "<group>"; };
 		23ECAA5D84294D619670CCBD /* Pods_noloTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_noloTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7408A5422EB7B1A003C1290 /* LaunchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LaunchCell.swift; path = "../../../../../../../System/Volumes/Data/Users/aryansharma/work/ios-ch/noloTest/noloTest/Views/LaunchCell.swift"; sourceTree = "<group>"; };
+		E7408A5622EB8A85003C1290 /* UIView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Additions.swift"; path = "../../../../../../../System/Volumes/Data/Users/aryansharma/work/ios-ch/noloTest/noloTest/Extensions/UIView+Additions.swift"; sourceTree = "<group>"; };
+		E7408A5822EB8B97003C1290 /* TriangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TriangleView.swift; path = "../../../../../../../System/Volumes/Data/Users/aryansharma/work/ios-ch/noloTest/noloTest/Views/TriangleView.swift"; sourceTree = "<group>"; };
 		E7EB5F3C22EB655B00571557 /* noloTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = noloTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7EB5F3F22EB655B00571557 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7EB5F4122EB655B00571557 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -132,6 +136,7 @@
 			children = (
 				E7EB5F5F22EB740400571557 /* LaunchCell.xib */,
 				E7408A5422EB7B1A003C1290 /* LaunchCell.swift */,
+				E7408A5822EB8B97003C1290 /* TriangleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 		E7EB5F5722EB65D400571557 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E7408A5622EB8A85003C1290 /* UIView+Additions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -280,6 +286,8 @@
 				E7408A5522EB7B1A003C1290 /* LaunchCell.swift in Sources */,
 				E7EB5F5B22EB6B6600571557 /* APIService.swift in Sources */,
 				E7EB5F5D22EB719700571557 /* Alert.swift in Sources */,
+				E7408A5722EB8A85003C1290 /* UIView+Additions.swift in Sources */,
+				E7408A5922EB8B97003C1290 /* TriangleView.swift in Sources */,
 				E7EB5F4022EB655B00571557 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

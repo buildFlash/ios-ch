@@ -10,4 +10,5 @@ target 'noloTest' do
   pod 'Kingfisher', '~> 5.0'
   pod 'SVProgressHUD'
   pod 'SwiftDate', '~> 5.0'
+  pod 'SCLAlertView'
 end

@@ -11,15 +11,28 @@ import UIKit
 class HomeVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var totalView: UIView!
+    @IBOutlet weak var totalLaunchesLabel: UILabel!
+    
     
     private let cellID = "LaunchCell"
-    private var launchList = [Launch]()
+    private var launchList = [Launch]() {
+        didSet {
+            totalLaunchesLabel.text = "\(launchList.count)"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         fetchData()
         setupTableView()
+        setupTotalView()
+    }
+    
+    private func setupTotalView() {
+        totalView.layer.cornerRadius = totalView.frame.height/2
+        totalView.dropShadow()
     }
 
     private func fetchData() {
@@ -42,6 +55,7 @@ class HomeVC: UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView()
         let nib = UINib(nibName: "LaunchCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: cellID)
     }
@@ -52,6 +66,14 @@ class HomeVC: UIViewController {
 extension HomeVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let launch = launchList[indexPath.row]
+        let message = "Rocket used: \(launch.rocket.rocket_name)" + "\n" + "Mission ID: \(launch.mission_id.first ?? "N/A")" + "\n" + "Flight # \(launch.flight_number)"
+        
+        Alert.showOKSCAlert(message: message, title: launch.mission_name)
     }
 }
 
