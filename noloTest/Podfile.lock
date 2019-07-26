@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.2)
+  - Dollar (8.0.0)
   - Kingfisher (5.5.0)
   - SCLAlertView (0.8)
   - SVProgressHUD (2.2.5)
@@ -7,6 +8,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Dollar
   - Kingfisher (~> 5.0)
   - SCLAlertView
   - SVProgressHUD
@@ -15,6 +17,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Dollar
     - Kingfisher
     - SCLAlertView
     - SVProgressHUD
@@ -22,11 +25,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Dollar: 82581ff2e4e80b26ba11fad5ac7e638892522ca5
   Kingfisher: 6fe5e67a90fd335e49b0f5c075ff55ac5ebedd94
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftDate: 6329e58969a2de31cea7f1ee1143b247693196e7
 
-PODFILE CHECKSUM: ed027f8379c4a37adbf0fd940d84651661e17d21
+PODFILE CHECKSUM: 4d628705f59d3c54b2dd89f7704be374997bd165
 
 COCOAPODS: 1.7.5

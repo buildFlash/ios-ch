@@ -20,7 +20,8 @@ class LaunchCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        imgView.dropShadow()
     }
     
     func initWith(launch: Launch) {

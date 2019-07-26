@@ -16,6 +16,7 @@ struct Launch: Codable {
     var rocket: Rocket
     var links: Link
     var details: String?
+    var launch_year: String
 }
 
 struct Rocket: Codable {

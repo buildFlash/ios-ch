@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Dollar
 
 class HomeVC: UIViewController {
     
@@ -17,11 +18,22 @@ class HomeVC: UIViewController {
     
     
     private let cellID = "LaunchCell"
-    private var launchList = [Launch]() {
+    
+    
+    var sections = Dictionary<String,Array<Launch>>()
+    var sortedSections = [String]()
+    var launchList = [Launch]() {
         didSet {
             totalLaunchesLabel.text = "\(launchList.count)"
+
+            self.launchList.sort { (o1, o2) -> Bool in
+                return o1.launch_date_utc < o2.launch_date_utc
+            }
+            sections = Dollar.groupBy(launchList, callback: { $0.launch_year })
+            sortedSections = sections.keys.sorted()
         }
     }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,18 +108,38 @@ extension HomeVC: UITableViewDelegate {
         
         Alert.showOKSCAlert(message: message, title: launch.mission_name)
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let returnedView = UIView(frame: CGRect(x: 40, y: 10, width: UIScreen.main.bounds.width, height: 30)) 
+        returnedView.backgroundColor = UIColor(red: 246.0/255.0, green: 244.0/255.0, blue: 241.0/255.0, alpha: 1.0)
+        
+        let label = UILabel(frame: CGRect(x: 40, y: 0, width: UIScreen.main.bounds.width, height: 30))
+        label.font = UIFont(name: "AvenirNext-Bold", size: 13)
+        label.textColor = .darkGray
+        label.text = sortedSections[section]
+        returnedView.addSubview(label)
+        
+        return returnedView
+    }
+
 }
 
 extension HomeVC: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return launchList.count
+        return sections[sortedSections[section]]!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? LaunchCell {
-            cell.initWith(launch: launchList[indexPath.row])
+            cell.initWith(launch: sections[sortedSections[indexPath.section]]![indexPath.row])
             return cell
         }
         return UITableViewCell()
     }
+    
 }
