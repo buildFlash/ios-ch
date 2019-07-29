@@ -103,10 +103,11 @@ extension HomeVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let launch = launchList[indexPath.row]
-        let message = "Rocket used: \(launch.rocket.rocket_name)" + "\n" + "Mission ID: \(launch.mission_id.first ?? "N/A")" + "\n" + "Flight # \(launch.flight_number)"
-        
-        Alert.showOKSCAlert(message: message, title: launch.mission_name)
+        if let launch = sections[sortedSections[indexPath.section]]?[indexPath.row] {
+            let message = "Rocket used: \(launch.rocket.rocket_name)" + "\n" + "Mission ID: \(launch.mission_id.first ?? "N/A")" + "\n" + "Flight # \(launch.flight_number)"
+            
+            Alert.showOKSCAlert(message: message, title: launch.mission_name)
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
